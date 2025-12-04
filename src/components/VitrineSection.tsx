@@ -1,17 +1,30 @@
 import { ShoppingBag, ExternalLink, Package, CreditCard } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import vitrineStore from '@/assets/vitrine-store.jpg';
 
 const VitrineSection = () => {
   return (
     <section id="vitrine" className="py-20 bg-muted/30">
       <div className="section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Vitrine Online
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Explore nosso catálogo completo de produtos e faça seu pedido diretamente pela nossa loja virtual.
-          </p>
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+          <div>
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold text-sm rounded-full mb-4">
+              Loja online
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Vitrine Online
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Explore nosso catálogo completo de produtos e faça seu pedido diretamente pela nossa loja virtual.
+            </p>
+          </div>
+          <div className="rounded-3xl overflow-hidden shadow-xl">
+            <img 
+              src={vitrineStore} 
+              alt="Catálogo de produtos de embalagens NICPACK"
+              className="w-full h-64 object-cover"
+            />
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-10">

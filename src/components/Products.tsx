@@ -1,4 +1,5 @@
 import { Package, Layers, CircleDot, Grip, FileText, Box, Wrench, CornerRightDown } from 'lucide-react';
+import productsMaterials from '@/assets/products-materials.jpg';
 
 const products = [
   {
@@ -47,6 +48,15 @@ const Products = () => {
   return (
     <section id="produtos" className="section-padding bg-secondary">
       <div className="section-container">
+        {/* Hero Image */}
+        <div className="mb-16 rounded-3xl overflow-hidden shadow-xl">
+          <img 
+            src={productsMaterials} 
+            alt="Materiais de embalagem industrial - filme stretch, fitas adesivas, plástico bolha e papel kraft"
+            className="w-full h-64 md:h-80 object-cover"
+          />
+        </div>
+
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold text-sm rounded-full mb-4">
