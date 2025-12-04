@@ -25,10 +25,8 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-md py-3'
-          : 'bg-transparent py-4'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background shadow-sm ${
+        isScrolled ? 'py-3' : 'py-4'
       }`}
     >
       <div className="section-container">
@@ -47,9 +45,7 @@ const Header = () => {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className={`font-medium text-sm tracking-wide link-underline transition-colors ${
-                    isScrolled ? 'text-foreground' : 'text-foreground'
-                  } hover:text-primary`}
+                  className="font-medium text-sm tracking-wide link-underline transition-colors text-foreground hover:text-primary"
                 >
                   {link.label}
                 </a>
