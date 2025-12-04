@@ -1,28 +1,23 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '@/assets/logo-nicpack.png';
-const navLinks = [{
-  href: '#inicio',
-  label: 'Início'
-}, {
-  href: '#sobre',
-  label: 'Sobre'
-}, {
-  href: '#produtos',
-  label: 'Produtos'
-}, {
-  href: '#servicos',
-  label: 'Serviços'
-}, {
-  href: '#planos',
-  label: 'Planos'
-}, {
-  href: '#contato',
-  label: 'Contato'
-}];
+
+const navLinks = [
+  { href: '#inicio', label: 'Início' },
+  { href: '#sobre', label: 'Sobre' },
+  { href: '#produtos', label: 'Produtos' },
+  { href: '#servicos', label: 'Serviços' },
+  { href: '#planos', label: 'Planos' },
+  { href: '#contato', label: 'Contato' },
+  { href: '/vitrine', label: 'Vitrine', isPage: true },
+];
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -30,20 +25,41 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background shadow-sm ${isScrolled ? 'py-3' : 'py-4'}`}>
+
+  const getHref = (link: typeof navLinks[0]) => {
+    if (link.isPage) return link.href;
+    return isHomePage ? link.href : `/${link.href}`;
+  };
+
+  return (
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background shadow-sm ${isScrolled ? 'py-3' : 'py-4'}`}>
       <div className="section-container">
         <nav className="flex items-center justify-between">
-          <a href="#inicio" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <img src={logo} alt="Logo NICPACK - Embalagens e Descartáveis Ltda ME" className="h-20 md:h-12 w-auto" />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-8">
-            {navLinks.map(link => <li key={link.href}>
-                <a href={link.href} className="font-medium text-sm tracking-wide link-underline transition-colors text-foreground hover:text-primary">
-                  {link.label}
-                </a>
-              </li>)}
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                {link.isPage ? (
+                  <Link
+                    to={link.href}
+                    className="font-medium text-sm tracking-wide link-underline transition-colors text-foreground hover:text-primary"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={getHref(link)}
+                    className="font-medium text-sm tracking-wide link-underline transition-colors text-foreground hover:text-primary"
+                  >
+                    {link.label}
+                  </a>
+                )}
+              </li>
+            ))}
           </ul>
 
           {/* CTA Button */}
@@ -58,21 +74,46 @@ const Header = () => {
         </nav>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && <div className="md:hidden absolute top-full left-0 right-0 bg-background shadow-lg border-t border-border animate-fade-in">
+        {isMobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-background shadow-lg border-t border-border animate-fade-in">
             <ul className="flex flex-col py-4">
-              {navLinks.map(link => <li key={link.href}>
-                  <a href={link.href} onClick={() => setIsMobileMenuOpen(false)} className="block px-6 py-3 text-foreground hover:bg-secondary hover:text-primary transition-colors font-medium">
-                    {link.label}
-                  </a>
-                </li>)}
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  {link.isPage ? (
+                    <Link
+                      to={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block px-6 py-3 text-foreground hover:bg-secondary hover:text-primary transition-colors font-medium"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={getHref(link)}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block px-6 py-3 text-foreground hover:bg-secondary hover:text-primary transition-colors font-medium"
+                    >
+                      {link.label}
+                    </a>
+                  )}
+                </li>
+              ))}
               <li className="px-6 pt-4">
-                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="block text-center px-5 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all">
+                <a
+                  href="https://wa.me/5511999999999"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center px-5 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all"
+                >
                   Solicitar orçamento
                 </a>
               </li>
             </ul>
-          </div>}
+          </div>
+        )}
       </div>
-    </header>;
+    </header>
+  );
 };
+
 export default Header;
