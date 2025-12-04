@@ -4,24 +4,30 @@ import { useEffect, useRef } from 'react';
 const Vitrine = () => {
   const badgeContainerRef = useRef<HTMLDivElement>(null);
 
+  // Lock body scroll when on this page
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+    
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
+  }, []);
+
   useEffect(() => {
     if (!badgeContainerRef.current) return;
 
-    // Create a unique ID for this badge container
     const badgeId = 'montesite-vitrine-badge';
     badgeContainerRef.current.id = badgeId;
 
-    // Check if script already loaded the badge
     const existingIframe = badgeContainerRef.current.querySelector('iframe');
     if (existingIframe) return;
 
-    // Load the MonteSite script targeting this specific container
     const script = document.createElement('script');
     script.src = 'https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe';
     script.setAttribute('data-target', badgeId);
     
-    // The script injects into #montesite-footer-badge by default
-    // So we temporarily rename our container
     const originalBadge = document.getElementById('montesite-footer-badge');
     if (originalBadge) {
       originalBadge.id = 'montesite-footer-badge-original';
@@ -29,7 +35,6 @@ const Vitrine = () => {
     badgeContainerRef.current.id = 'montesite-footer-badge';
 
     script.onload = () => {
-      // Restore original badge ID
       if (originalBadge) {
         originalBadge.id = 'montesite-footer-badge';
       }
@@ -41,7 +46,6 @@ const Vitrine = () => {
     document.body.appendChild(script);
 
     return () => {
-      // Cleanup
       if (originalBadge) {
         originalBadge.id = 'montesite-footer-badge';
       }
