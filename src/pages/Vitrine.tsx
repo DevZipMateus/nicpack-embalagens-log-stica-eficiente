@@ -1,17 +1,6 @@
 import Header from '@/components/Header';
-import { useEffect } from 'react';
 
 const Vitrine = () => {
-  useEffect(() => {
-    // Load MonteSite badge script dynamically for this page
-    const existingScript = document.querySelector('script[src*="get-footer-iframe"]');
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.src = 'https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe';
-      document.body.appendChild(script);
-    }
-  }, []);
-
   return (
     <div className="h-screen overflow-hidden flex flex-col">
       {/* Header - 80px */}
@@ -22,7 +11,7 @@ const Vitrine = () => {
       
       {/* Main content area */}
       <main className="flex-1 flex flex-col" style={{ height: 'calc(100vh - 80px)' }}>
-        {/* Iframe - fills remaining space minus badge (63px) */}
+        {/* Iframe da Vitrine */}
         <iframe
           src="https://nicpack.egestor.com.br/vitrine/"
           title="Demonstração de Vitrine"
@@ -30,9 +19,14 @@ const Vitrine = () => {
           style={{ height: 'calc(100% - 63px)' }}
         />
         
-        {/* Badge MonteSite - 63px - inside body */}
-        <footer id="montesite-footer-badge-vitrine" className="h-[63px] flex-shrink-0 w-full bg-background">
-          <div id="montesite-footer-badge" className="h-full w-full" />
+        {/* Badge MonteSite - 63px - carregado via iframe */}
+        <footer className="h-[63px] flex-shrink-0 w-full">
+          <iframe
+            src="https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe"
+            title="MonteSite Badge"
+            className="w-full h-full border-none"
+            scrolling="no"
+          />
         </footer>
       </main>
     </div>
