@@ -33,13 +33,18 @@ const products = [
     description: 'Papéis para embalagem, proteção e fechamento ecológico.',
   },
   {
+    icon: Layers,
+    name: 'Lonas',
+    description: 'Lonas para proteção de cargas e coberturas diversas.',
+  },
+  {
     icon: CornerRightDown,
     name: 'Cantoneiras e tubetes',
     description: 'Proteção de bordas e cantos para evitar danos durante o transporte.',
   },
   {
     icon: Wrench,
-    name: 'Aparelhos e acessórios',
+    name: 'Aparelhos PET',
     description: 'Esticadores, seladores, desbobinadores e kits completos para aplicação.',
   },
 ];
