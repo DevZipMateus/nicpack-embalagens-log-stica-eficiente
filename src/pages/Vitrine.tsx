@@ -9,17 +9,19 @@ const Vitrine = () => {
       {/* Spacer for fixed header */}
       <div className="h-20 flex-shrink-0" />
       
-      {/* Iframe - fills remaining space minus badge (63px) */}
-      <div className="flex-1" style={{ height: 'calc(100vh - 80px - 63px)' }}>
+      {/* Main content area */}
+      <main className="flex-1 flex flex-col" style={{ height: 'calc(100vh - 80px)' }}>
+        {/* Iframe - fills remaining space minus badge (63px) */}
         <iframe
           src="https://nicpack.egestor.com.br/vitrine/"
           title="Demonstração de Vitrine"
-          className="w-full h-full border-none"
+          className="w-full flex-1 border-none"
+          style={{ height: 'calc(100% - 63px)' }}
         />
-      </div>
-      
-      {/* Badge MonteSite - 63px */}
-      <div id="montesite-footer-badge" className="h-[63px] flex-shrink-0" />
+        
+        {/* Badge MonteSite - 63px - inside body */}
+        <div id="montesite-footer-badge" className="h-[63px] flex-shrink-0 w-full" />
+      </main>
     </div>
   );
 };
