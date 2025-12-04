@@ -5,16 +5,16 @@ const Footer = () => {
 
   return (
     <footer className="bg-foreground text-background">
-      <div className="section-container py-12">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+      <div className="section-container py-8 sm:py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8">
           {/* Logo & Description */}
-          <div className="md:col-span-2">
+          <div className="col-span-2">
             <img
               src={logo}
               alt="Logo NICPACK"
-              className="h-12 w-auto mb-4 brightness-0 invert"
+              className="h-10 sm:h-12 w-auto mb-4 brightness-0 invert"
             />
-            <p className="text-background/70 text-sm max-w-md">
+            <p className="text-background/70 text-xs sm:text-sm max-w-md">
               NICPACK Indústria e Comércio de Embalagens. Transformando logística em eficiência 
               há mais de 20 anos. Proteção, qualidade e agilidade para o seu negócio.
             </p>

@@ -16,35 +16,35 @@ const Hero = () => {
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-primary/80" />
 
-      <div className="section-container relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="section-container relative z-10 w-full py-8 sm:py-0">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-tight mb-6 animate-fade-up opacity-0">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-tight mb-4 sm:mb-6 animate-fade-up opacity-0">
               NICPACK
             </h1>
-            <h2 className="text-xl md:text-2xl lg:text-3xl text-primary-foreground/90 font-light mb-6 animate-fade-up opacity-0 delay-100">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary-foreground/90 font-light mb-4 sm:mb-6 animate-fade-up opacity-0 delay-100">
               Transformando logística em eficiência. Proteção, qualidade e agilidade para o seu negócio.
             </h2>
-            <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-up opacity-0 delay-200">
+            <p className="text-base sm:text-lg text-primary-foreground/80 mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-up opacity-0 delay-200">
               Soluções completas em embalagens industriais para paletização, proteção e fechamento de mercadorias com mais de 20 anos de experiência.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up opacity-0 delay-300">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start animate-fade-up opacity-0 delay-300">
               <a
                 href="https://wa.me/5511999999999"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary-foreground text-primary font-bold text-lg hover:bg-primary-foreground/90 transition-all duration-300 hover:shadow-xl"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-primary-foreground text-primary font-bold text-base sm:text-lg hover:bg-primary-foreground/90 transition-all duration-300 hover:shadow-xl"
               >
                 Fale conosco
-                <ArrowRight size={20} />
+                <ArrowRight size={18} className="sm:w-5 sm:h-5" />
               </a>
               <Link
                 to="/vitrine"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full btn-outline-white font-semibold text-lg"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full btn-outline-white font-semibold text-base sm:text-lg"
               >
-                <ShoppingBag size={20} />
+                <ShoppingBag size={18} className="sm:w-5 sm:h-5" />
                 Vitrine Online
               </Link>
             </div>

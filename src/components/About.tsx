@@ -63,30 +63,30 @@ const About = () => {
         </div>
 
         {/* Stats */}
-        <div className="bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-8 mb-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-primary-foreground">
+        <div className="bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-6 sm:p-8 mb-20">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-primary-foreground">
             <div className="text-center">
-              <div className="text-4xl font-extrabold mb-1">20+</div>
-              <div className="text-sm opacity-80">Anos de experiência</div>
+              <div className="text-3xl sm:text-4xl font-extrabold mb-1">20+</div>
+              <div className="text-xs sm:text-sm opacity-80">Anos de experiência</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-extrabold mb-1">100+</div>
-              <div className="text-sm opacity-80">Produtos disponíveis</div>
+              <div className="text-3xl sm:text-4xl font-extrabold mb-1">100+</div>
+              <div className="text-xs sm:text-sm opacity-80">Produtos disponíveis</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-extrabold mb-1">SP</div>
-              <div className="text-sm opacity-80">Embu das Artes</div>
+              <div className="text-3xl sm:text-4xl font-extrabold mb-1">SP</div>
+              <div className="text-xs sm:text-sm opacity-80">Embu das Artes</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-extrabold mb-1">24h</div>
-              <div className="text-sm opacity-80">Entrega expressa</div>
+              <div className="text-3xl sm:text-4xl font-extrabold mb-1">24h</div>
+              <div className="text-xs sm:text-sm opacity-80">Entrega expressa</div>
             </div>
           </div>
         </div>
 
         {/* Mission & Vision */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-secondary rounded-2xl p-8">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-16">
+          <div className="bg-secondary rounded-2xl p-6 sm:p-8">
             <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
               <Target className="w-7 h-7 text-primary" />
             </div>
@@ -97,7 +97,7 @@ const About = () => {
               para o crescimento sustentável dos nossos clientes e parceiros.
             </p>
           </div>
-          <div className="bg-secondary rounded-2xl p-8">
+          <div className="bg-secondary rounded-2xl p-6 sm:p-8">
             <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
               <Eye className="w-7 h-7 text-primary" />
             </div>
@@ -113,17 +113,17 @@ const About = () => {
         {/* Values */}
         <div>
           <h3 className="text-2xl font-bold text-foreground text-center mb-8">Nossos valores</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-card rounded-xl p-5 text-center card-shadow hover:card-shadow-elevated transition-all duration-300 hover:-translate-y-1"
+                className="bg-card rounded-xl p-4 sm:p-5 text-center card-shadow hover:card-shadow-elevated transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <value.icon className="w-6 h-6 text-primary" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                  <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <h4 className="font-semibold text-foreground text-sm mb-1">{value.title}</h4>
-                <p className="text-xs text-muted-foreground">{value.desc}</p>
+                <h4 className="font-semibold text-foreground text-xs sm:text-sm mb-1">{value.title}</h4>
+                <p className="text-[10px] sm:text-xs text-muted-foreground leading-tight">{value.desc}</p>
               </div>
             ))}
           </div>
