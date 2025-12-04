@@ -1,4 +1,5 @@
-import { ArrowRight, Package, Truck, Shield } from 'lucide-react';
+import { ArrowRight, Package, Truck, Shield, ShoppingBag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import heroBg from '@/assets/hero-bg.jpg';
 
 const Hero = () => {
@@ -39,12 +40,13 @@ const Hero = () => {
                 Fale conosco
                 <ArrowRight size={20} />
               </a>
-              <a
-                href="#produtos"
+              <Link
+                to="/vitrine"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full btn-outline-white font-semibold text-lg"
               >
-                Nossos produtos
-              </a>
+                <ShoppingBag size={20} />
+                Vitrine Online
+              </Link>
             </div>
           </div>
 
