@@ -1,12 +1,13 @@
-import { Target, Eye, Heart, Award, Users, Scale } from 'lucide-react';
+import { Target, Eye, Heart, Award, Users, Scale, CheckCircle } from 'lucide-react';
 import aboutWarehouse from '@/assets/about-warehouse.jpg';
 
 const values = [
-  { icon: Award, title: 'Qualidade e eficiência', desc: 'Produtos confiáveis e processos ágeis' },
-  { icon: Heart, title: 'Atendimento humanizado', desc: 'Relações próximas e transparentes' },
-  { icon: Target, title: 'Inovação sustentável', desc: 'Tecnologia e responsabilidade ambiental' },
-  { icon: Users, title: 'Valorização das pessoas', desc: 'Crescimento e reconhecimento' },
-  { icon: Scale, title: 'Transparência e ética', desc: 'Integridade em todas as ações' },
+  { icon: Award, title: 'Qualidade e Eficiência', desc: 'Compromisso com produtos confiáveis, processos ágeis e resultados consistentes.' },
+  { icon: Heart, title: 'Atendimento Humanizado', desc: 'Relações próximas, empáticas e transparentes com cada cliente.' },
+  { icon: Target, title: 'Inovação Sustentável', desc: 'Soluções que unem tecnologia e responsabilidade ambiental.' },
+  { icon: CheckCircle, title: 'Comprometimento', desc: 'Responsabilidade, seriedade e dedicação em todas as etapas.' },
+  { icon: Users, title: 'Valorização das Pessoas', desc: 'Crescimento através do desenvolvimento e reconhecimento.' },
+  { icon: Scale, title: 'Transparência e Ética', desc: 'Integridade e clareza nas negociações e relacionamentos.' },
 ];
 
 const About = () => {
@@ -32,9 +33,10 @@ const About = () => {
             <h3 className="text-2xl font-bold text-foreground mb-4">Nossa história</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                A NICPACK nasceu com o propósito de entregar muito mais do que materiais para embalagem. 
+                A Nicpack nasceu com o propósito de entregar muito mais do que materiais para embalagem. 
                 Sua história é construída sobre mais de 20 anos de experiência no comércio de soluções 
-                para paletização, proteção e fechamento de mercadorias.
+                para paletização, proteção e fechamento de mercadorias, sempre pautada pela qualidade, 
+                eficiência e parceria com os clientes.
               </p>
               <p>
                 Localizada em Embu das Artes/SP, próxima ao acesso do Rodoanel, a empresa estruturou 
@@ -43,7 +45,8 @@ const About = () => {
               </p>
               <p>
                 Um dos pilares que mais nos define é o atendimento humanizado, com equipe comercial 
-                especializada preparada para orientar e garantir a melhor solução para cada necessidade.
+                especializada preparada para atender via WhatsApp, telefone, e-mail e Instagram, além de 
+                visitas técnicas com demonstração prática dos materiais.
               </p>
             </div>
           </div>
@@ -110,7 +113,7 @@ const About = () => {
         {/* Values */}
         <div>
           <h3 className="text-2xl font-bold text-foreground text-center mb-8">Nossos valores</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {values.map((value, index) => (
               <div
                 key={index}

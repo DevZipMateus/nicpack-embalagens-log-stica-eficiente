@@ -78,19 +78,19 @@ const Services = () => {
             />
           </div>
           <div className="bg-gradient-to-br from-primary to-primary/80 rounded-3xl p-8">
-            <h3 className="text-2xl font-bold text-primary-foreground mb-6">
+            <h3 className="text-2xl font-bold text-primary-foreground mb-4">
               Segmentos atendidos
             </h3>
             <p className="text-primary-foreground/80 mb-6">
-              Atendemos empresas de diversos portes e segmentos com soluções personalizadas
+              Atuamos no mercado de embalagens industriais, atendendo empresas que necessitam de soluções para proteção, paletização, armazenagem e transporte.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {[
                 'Indústria',
-                'Logística',
-                'Atacado',
+                'Centros de distribuição',
+                'Atacado e varejo',
                 'E-commerce',
-                'Construção',
+                'Construção civil',
                 'Transporte',
               ].map((segment, index) => (
                 <div
