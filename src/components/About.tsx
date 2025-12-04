@@ -1,4 +1,5 @@
 import { Target, Eye, Heart, Award, Users, Scale } from 'lucide-react';
+import aboutWarehouse from '@/assets/about-warehouse.jpg';
 
 const values = [
   { icon: Award, title: 'Qualidade e eficiência', desc: 'Produtos confiáveis e processos ágeis' },
@@ -49,26 +50,33 @@ const About = () => {
           <div className="order-1 lg:order-2">
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/10 rounded-3xl rotate-3"></div>
-              <div className="relative bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-8 text-primary-foreground">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center">
-                    <div className="text-4xl font-extrabold mb-1">20+</div>
-                    <div className="text-sm opacity-80">Anos de experiência</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-extrabold mb-1">100+</div>
-                    <div className="text-sm opacity-80">Produtos disponíveis</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-extrabold mb-1">SP</div>
-                    <div className="text-sm opacity-80">Embu das Artes</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-extrabold mb-1">24h</div>
-                    <div className="text-sm opacity-80">Entrega expressa</div>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src={aboutWarehouse} 
+                alt="Armazém NICPACK com paletes embalados em filme stretch" 
+                className="relative rounded-2xl shadow-xl w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-8 mb-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-primary-foreground">
+            <div className="text-center">
+              <div className="text-4xl font-extrabold mb-1">20+</div>
+              <div className="text-sm opacity-80">Anos de experiência</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-extrabold mb-1">100+</div>
+              <div className="text-sm opacity-80">Produtos disponíveis</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-extrabold mb-1">SP</div>
+              <div className="text-sm opacity-80">Embu das Artes</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-extrabold mb-1">24h</div>
+              <div className="text-sm opacity-80">Entrega expressa</div>
             </div>
           </div>
         </div>

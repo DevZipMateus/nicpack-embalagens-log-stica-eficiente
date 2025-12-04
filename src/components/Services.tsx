@@ -1,4 +1,5 @@
 import { Truck, Users, Recycle, Headphones, MapPin, ShoppingCart } from 'lucide-react';
+import servicesDelivery from '@/assets/services-delivery.jpg';
 
 const services = [
   {
@@ -67,32 +68,39 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Market Segments */}
-        <div className="mt-20 bg-gradient-to-br from-primary to-primary/80 rounded-3xl p-8 md:p-12">
-          <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
+        {/* Delivery Image + Market Segments */}
+        <div className="mt-20 grid lg:grid-cols-2 gap-8 items-center">
+          <div className="rounded-3xl overflow-hidden shadow-xl">
+            <img 
+              src={servicesDelivery} 
+              alt="Caminhão de entrega NICPACK com caixas para distribuição"
+              className="w-full h-72 object-cover"
+            />
+          </div>
+          <div className="bg-gradient-to-br from-primary to-primary/80 rounded-3xl p-8">
+            <h3 className="text-2xl font-bold text-primary-foreground mb-6">
               Segmentos atendidos
             </h3>
-            <p className="text-primary-foreground/80">
+            <p className="text-primary-foreground/80 mb-6">
               Atendemos empresas de diversos portes e segmentos com soluções personalizadas
             </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              'Indústria',
-              'Logística',
-              'Atacado',
-              'E-commerce',
-              'Construção',
-              'Transporte',
-            ].map((segment, index) => (
-              <div
-                key={index}
-                className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl py-4 px-3 text-center border border-primary-foreground/20"
-              >
-                <span className="text-primary-foreground font-medium text-sm">{segment}</span>
-              </div>
-            ))}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {[
+                'Indústria',
+                'Logística',
+                'Atacado',
+                'E-commerce',
+                'Construção',
+                'Transporte',
+              ].map((segment, index) => (
+                <div
+                  key={index}
+                  className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl py-3 px-3 text-center border border-primary-foreground/20"
+                >
+                  <span className="text-primary-foreground font-medium text-sm">{segment}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
