@@ -36,11 +36,11 @@ const Header = () => {
       <div className="section-container">
         <nav className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Logo NICPACK - Embalagens e Descartáveis Ltda ME" className="h-20 md:h-12 w-auto" />
+            <img src={logo} alt="Logo NICPACK - Embalagens e Descartáveis Ltda ME" className="h-10 sm:h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
                 {link.isPage ? (
@@ -63,19 +63,19 @@ const Header = () => {
           </ul>
 
           {/* CTA Button */}
-          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all duration-300 hover:shadow-lg">
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="hidden lg:inline-flex items-center gap-2 px-4 xl:px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all duration-300 hover:shadow-lg">
             Solicitar orçamento
           </a>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 text-foreground" aria-label="Menu">
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden p-2 text-foreground" aria-label="Menu">
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </nav>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-background shadow-lg border-t border-border animate-fade-in">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-background shadow-lg border-t border-border animate-fade-in">
             <ul className="flex flex-col py-4">
               {navLinks.map((link) => (
                 <li key={link.href}>

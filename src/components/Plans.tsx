@@ -42,26 +42,26 @@ const Plans = () => {
     <section id="planos" className="section-padding bg-secondary">
       <div className="section-container">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <span className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold text-sm rounded-full mb-4">
             Nossos planos
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Escolha a melhor opção para você
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-4">
             Planos flexíveis que se adaptam às necessidades do seu negócio
           </p>
         </div>
 
         {/* Plans Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 ${
+              className={`relative rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 ${
                 plan.highlight
-                  ? 'bg-primary text-primary-foreground shadow-2xl scale-105'
+                  ? 'bg-primary text-primary-foreground shadow-2xl sm:scale-105 order-first sm:order-none'
                   : 'bg-card card-shadow'
               }`}
             >

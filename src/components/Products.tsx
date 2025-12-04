@@ -54,50 +54,50 @@ const Products = () => {
     <section id="produtos" className="section-padding bg-secondary">
       <div className="section-container">
         {/* Hero Image */}
-        <div className="mb-16 rounded-3xl overflow-hidden shadow-xl">
+        <div className="mb-10 sm:mb-16 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
           <img 
             src={productsMaterials} 
             alt="Materiais de embalagem industrial - filme stretch, fitas adesivas, plástico bolha e papel kraft"
-            className="w-full h-64 md:h-80 object-cover"
+            className="w-full h-48 sm:h-64 md:h-80 object-cover"
           />
         </div>
 
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <span className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold text-sm rounded-full mb-4">
             Nossos produtos
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Soluções completas em embalagens
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-4">
             Trabalhamos com materiais para paletização, proteção e fechamento de mercadorias
           </p>
         </div>
 
         {/* Products Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
           {products.map((product, index) => (
             <div
               key={index}
-              className="group bg-card rounded-2xl p-6 card-shadow hover:card-shadow-elevated transition-all duration-300 hover:-translate-y-2"
+              className="group bg-card rounded-xl sm:rounded-2xl p-4 sm:p-6 card-shadow hover:card-shadow-elevated transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                <product.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+              <div className="w-10 h-10 sm:w-14 sm:h-14 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                <product.icon className="w-5 h-5 sm:w-7 sm:h-7 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">{product.name}</h3>
-              <p className="text-muted-foreground text-sm">{product.description}</p>
+              <h3 className="text-sm sm:text-lg font-bold text-foreground mb-1 sm:mb-2">{product.name}</h3>
+              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{product.description}</p>
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8 sm:mt-12">
           <a
             href="https://wa.me/5511999999999"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-lg"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-primary text-primary-foreground font-semibold text-sm sm:text-base hover:bg-primary/90 transition-all duration-300 hover:shadow-lg"
           >
             Solicitar catálogo completo
           </a>
