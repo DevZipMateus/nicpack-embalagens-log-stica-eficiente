@@ -1,6 +1,17 @@
 import Header from '@/components/Header';
+import { useEffect } from 'react';
 
 const Vitrine = () => {
+  useEffect(() => {
+    // Load MonteSite badge script dynamically for this page
+    const existingScript = document.querySelector('script[src*="get-footer-iframe"]');
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.src = 'https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe';
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
     <div className="h-screen overflow-hidden flex flex-col">
       {/* Header - 80px */}
@@ -20,7 +31,9 @@ const Vitrine = () => {
         />
         
         {/* Badge MonteSite - 63px - inside body */}
-        <div id="montesite-footer-badge" className="h-[63px] flex-shrink-0 w-full" />
+        <footer id="montesite-footer-badge-vitrine" className="h-[63px] flex-shrink-0 w-full bg-background">
+          <div id="montesite-footer-badge" className="h-full w-full" />
+        </footer>
       </main>
     </div>
   );
