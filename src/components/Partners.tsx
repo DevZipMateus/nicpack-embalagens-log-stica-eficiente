@@ -44,13 +44,13 @@ const Partners = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 bg-muted/30">
+    <section className="py-10 sm:py-12 md:py-16 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mb-3">
+        <div className="text-center mb-6 sm:mb-8 md:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground mb-2 sm:mb-3">
             Nossos Parceiros
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-2">
             Empresas que confiam na Nicpack para suas soluções em embalagens
           </p>
         </div>
