@@ -61,8 +61,8 @@ const Plans = () => {
               key={index}
               className={`relative rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 transition-all duration-300 hover:-translate-y-2 ${
                 plan.highlight
-                  ? 'bg-primary text-primary-foreground shadow-2xl sm:scale-105 order-first sm:order-none'
-                  : 'bg-card card-shadow'
+                  ? 'glass-primary text-primary-foreground shadow-2xl sm:scale-105 order-first sm:order-none'
+                  : 'glass-card hover:shadow-xl'
               }`}
             >
               {plan.highlight && (

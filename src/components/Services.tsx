@@ -56,10 +56,10 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-card rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-8 border border-border hover:border-primary/30 transition-all duration-300"
+              className="group relative glass-card rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-8 hover:border-primary/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
             >
               <div className="absolute top-0 left-4 sm:left-5 md:left-8 w-12 sm:w-16 md:w-20 h-1 bg-primary rounded-b-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-secondary rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 md:mb-6 group-hover:bg-primary/10 transition-colors duration-300">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-primary/10 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 md:mb-6 group-hover:bg-primary/20 transition-colors duration-300">
                 <service.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-primary" />
               </div>
               <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-1.5 sm:mb-2 md:mb-3">{service.title}</h3>
@@ -77,7 +77,7 @@ const Services = () => {
               className="w-full h-40 sm:h-56 md:h-72 object-cover"
             />
           </div>
-          <div className="bg-gradient-to-br from-primary to-primary/80 rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8">
+          <div className="glass-primary rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl">
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary-foreground mb-2 sm:mb-3 md:mb-4">
               Segmentos atendidos
             </h3>
