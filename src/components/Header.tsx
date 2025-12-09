@@ -32,7 +32,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background shadow-sm ${isScrolled ? 'py-3' : 'py-4'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-3 glass shadow-lg' : 'py-4 bg-background'}`}>
       <div className="section-container">
         <nav className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
@@ -75,7 +75,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-background shadow-lg border-t border-border animate-fade-in">
+          <div className="lg:hidden absolute top-full left-0 right-0 glass shadow-lg border-t border-border/50 animate-fade-in">
             <ul className="flex flex-col py-4">
               {navLinks.map((link) => (
                 <li key={link.href}>

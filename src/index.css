@@ -152,6 +152,37 @@
            after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right 
            after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
+
+  /* Glassmorphism Effects */
+  .glass {
+    @apply backdrop-blur-xl bg-background/70 border border-border/50;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-xl bg-foreground/10 border border-primary-foreground/20;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-lg bg-card/80 border border-border/40 shadow-lg;
+  }
+
+  .glass-primary {
+    @apply backdrop-blur-xl bg-primary/80 border border-primary-foreground/20;
+  }
+
+  /* Parallax Background */
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @supports (-webkit-touch-callout: none) {
+    .parallax-bg {
+      background-attachment: scroll;
+    }
+  }
 }
 
 @layer utilities {
